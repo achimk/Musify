@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA1239961EB73B0D001A7915 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1239931EB73B0D001A7915 /* Box.swift */; };
+		AA1239971EB73B0D001A7915 /* BoxType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1239941EB73B0D001A7915 /* BoxType.swift */; };
+		AA1239981EB73B0D001A7915 /* MutableBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1239951EB73B0D001A7915 /* MutableBox.swift */; };
+		AA12399D1EB73B72001A7915 /* BoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA12399A1EB73B72001A7915 /* BoxTests.swift */; };
+		AA12399E1EB73B72001A7915 /* BoxTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA12399B1EB73B72001A7915 /* BoxTypeTests.swift */; };
+		AA12399F1EB73B72001A7915 /* MutableBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA12399C1EB73B72001A7915 /* MutableBoxTests.swift */; };
 		AA24EE761E7D516B00037DBB /* CollectionOfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24EE751E7D516B00037DBB /* CollectionOfTests.swift */; };
 		AA24EE781E7D523C00037DBB /* ProxyCollectionOfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24EE771E7D523C00037DBB /* ProxyCollectionOfTests.swift */; };
 		AA24EE7A1E7D526600037DBB /* MapCollectionOfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24EE791E7D526600037DBB /* MapCollectionOfTests.swift */; };
@@ -34,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA1239931EB73B0D001A7915 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		AA1239941EB73B0D001A7915 /* BoxType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxType.swift; sourceTree = "<group>"; };
+		AA1239951EB73B0D001A7915 /* MutableBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableBox.swift; sourceTree = "<group>"; };
+		AA12399A1EB73B72001A7915 /* BoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxTests.swift; sourceTree = "<group>"; };
+		AA12399B1EB73B72001A7915 /* BoxTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxTypeTests.swift; sourceTree = "<group>"; };
+		AA12399C1EB73B72001A7915 /* MutableBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableBoxTests.swift; sourceTree = "<group>"; };
 		AA24EE751E7D516B00037DBB /* CollectionOfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionOfTests.swift; sourceTree = "<group>"; };
 		AA24EE771E7D523C00037DBB /* ProxyCollectionOfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyCollectionOfTests.swift; sourceTree = "<group>"; };
 		AA24EE791E7D526600037DBB /* MapCollectionOfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCollectionOfTests.swift; sourceTree = "<group>"; };
@@ -72,6 +84,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA1239921EB73AE4001A7915 /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				AA1239931EB73B0D001A7915 /* Box.swift */,
+				AA1239941EB73B0D001A7915 /* BoxType.swift */,
+				AA1239951EB73B0D001A7915 /* MutableBox.swift */,
+			);
+			path = Box;
+			sourceTree = "<group>";
+		};
+		AA1239991EB73B5A001A7915 /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				AA12399A1EB73B72001A7915 /* BoxTests.swift */,
+				AA12399B1EB73B72001A7915 /* BoxTypeTests.swift */,
+				AA12399C1EB73B72001A7915 /* MutableBoxTests.swift */,
+			);
+			path = Box;
+			sourceTree = "<group>";
+		};
 		AA24EE6B1E7D512D00037DBB /* Collection */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +162,7 @@
 		AA72115C1E7D4E92005C5E62 /* MusToolkit */ = {
 			isa = PBXGroup;
 			children = (
+				AA1239921EB73AE4001A7915 /* Box */,
 				AA2C01D31E8E746F00DD4998 /* Task */,
 				AA677E191E7D772900F7C680 /* RxSwift */,
 				AA7211751E7D4F49005C5E62 /* Collection */,
@@ -143,6 +176,7 @@
 		AA7211671E7D4E92005C5E62 /* MusToolkitTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA1239991EB73B5A001A7915 /* Box */,
 				AA2C01DA1E8E756E00DD4998 /* Task */,
 				AA24EE6B1E7D512D00037DBB /* Collection */,
 				AA7211681E7D4E92005C5E62 /* MusToolkitTests.swift */,
@@ -280,8 +314,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA2C01D91E8E755D00DD4998 /* SerialQueue.swift in Sources */,
+				AA1239961EB73B0D001A7915 /* Box.swift in Sources */,
 				AA2C01D71E8E74A600DD4998 /* Task.swift in Sources */,
+				AA1239971EB73B0D001A7915 /* BoxType.swift in Sources */,
 				AA7211771E7D4F6B005C5E62 /* CollectionOf.swift in Sources */,
+				AA1239981EB73B0D001A7915 /* MutableBox.swift in Sources */,
 				AAC82C061E996D5C00ADD6DD /* UIDevice+Model.swift in Sources */,
 				AA677E1D1E7D79A500F7C680 /* Observable+Probe.swift in Sources */,
 				AA677E1B1E7D775B00F7C680 /* Observable+Result.swift in Sources */,
@@ -294,8 +331,11 @@
 			files = (
 				AA24EE781E7D523C00037DBB /* ProxyCollectionOfTests.swift in Sources */,
 				AA2C01DE1E8E75C500DD4998 /* TaskTests.swift in Sources */,
+				AA12399F1EB73B72001A7915 /* MutableBoxTests.swift in Sources */,
 				AA24EE761E7D516B00037DBB /* CollectionOfTests.swift in Sources */,
+				AA12399E1EB73B72001A7915 /* BoxTypeTests.swift in Sources */,
 				AA7211691E7D4E92005C5E62 /* MusToolkitTests.swift in Sources */,
+				AA12399D1EB73B72001A7915 /* BoxTests.swift in Sources */,
 				AA24EE7A1E7D526600037DBB /* MapCollectionOfTests.swift in Sources */,
 				AA2C01E01E8E784700DD4998 /* SerialQueueTests.swift in Sources */,
 			);

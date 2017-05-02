@@ -18,7 +18,7 @@ public protocol SongConvertible {
 }
 
 extension SongConvertible where Self: SongType {
-    final func asSong() -> SongType {
+    public final func asSong() -> SongType {
         return self
     }
 }

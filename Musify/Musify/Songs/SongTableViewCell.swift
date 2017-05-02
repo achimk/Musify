@@ -11,7 +11,6 @@ import Reusable
 import MusServices
 
 final class SongTableViewCell: UITableViewCell, Reusable {
-
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
     }

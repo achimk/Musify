@@ -14,12 +14,14 @@ struct Navigation {
     static var Scheme: String = "musify"
 
     enum Path: String {
+        case playlists = "playlists"
         case topArtists = "top_artists"
         case albums = "albums:{artist}"
         case songs = "songs:{album}"
     }
 
     enum Route {
+        case playlists
         case topArtists
         case albums(artist: ArtistType)
         case songs(album: AlbumType)
@@ -45,6 +47,9 @@ struct Navigation {
 
         static func create(_ route: Route) -> Location {
             switch route {
+            case .playlists:
+                return Location(path: Path.playlists.rawValue)
+
             case .topArtists:
                 return Location(path: Path.topArtists.rawValue)
 

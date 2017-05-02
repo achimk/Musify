@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA1239B01EB74248001A7915 /* PlaylistsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1239AF1EB74248001A7915 /* PlaylistsFlow.swift */; };
+		AA1239B21EB74255001A7915 /* PlaylistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1239B11EB74255001A7915 /* PlaylistsViewController.swift */; };
+		AA1239B41EB74261001A7915 /* PlaylistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1239B31EB74261001A7915 /* PlaylistsViewModel.swift */; };
+		AA1239B81EB74284001A7915 /* PlaylistPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1239B71EB74284001A7915 /* PlaylistPresentationItem.swift */; };
+		AA1239BA1EB7429A001A7915 /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1239B91EB7429A001A7915 /* PlaylistTableViewCell.swift */; };
+		AA1239BC1EB74858001A7915 /* PlaylistsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1239BB1EB74858001A7915 /* PlaylistsRoute.swift */; };
 		AA4E286F1E8C13B200A2F9C0 /* NavigationServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E286E1E8C13B200A2F9C0 /* NavigationServiceFactory.swift */; };
 		AA4E28721E8C25AC00A2F9C0 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E28711E8C25AC00A2F9C0 /* Navigation.swift */; };
 		AA4E28741E8C2A8F00A2F9C0 /* NavigationServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E28731E8C2A8F00A2F9C0 /* NavigationServiceType.swift */; };
@@ -154,6 +160,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AA1239AF1EB74248001A7915 /* PlaylistsFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsFlow.swift; sourceTree = "<group>"; };
+		AA1239B11EB74255001A7915 /* PlaylistsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsViewController.swift; sourceTree = "<group>"; };
+		AA1239B31EB74261001A7915 /* PlaylistsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsViewModel.swift; sourceTree = "<group>"; };
+		AA1239B71EB74284001A7915 /* PlaylistPresentationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistPresentationItem.swift; sourceTree = "<group>"; };
+		AA1239B91EB7429A001A7915 /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
+		AA1239BB1EB74858001A7915 /* PlaylistsRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsRoute.swift; sourceTree = "<group>"; };
 		AA4E286E1E8C13B200A2F9C0 /* NavigationServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationServiceFactory.swift; sourceTree = "<group>"; };
 		AA4E28711E8C25AC00A2F9C0 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		AA4E28731E8C2A8F00A2F9C0 /* NavigationServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationServiceType.swift; sourceTree = "<group>"; };
@@ -212,9 +224,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA1239AB1EB7421F001A7915 /* Playlists */ = {
+			isa = PBXGroup;
+			children = (
+				AA1239AF1EB74248001A7915 /* PlaylistsFlow.swift */,
+				AA1239B11EB74255001A7915 /* PlaylistsViewController.swift */,
+				AA1239B31EB74261001A7915 /* PlaylistsViewModel.swift */,
+				AA1239B91EB7429A001A7915 /* PlaylistTableViewCell.swift */,
+				AA1239B71EB74284001A7915 /* PlaylistPresentationItem.swift */,
+			);
+			path = Playlists;
+			sourceTree = "<group>";
+		};
 		AA4E28701E8C23AA00A2F9C0 /* Routes */ = {
 			isa = PBXGroup;
 			children = (
+				AA1239BB1EB74858001A7915 /* PlaylistsRoute.swift */,
 				AAF335AB1E893E9400F16942 /* TopArtistsRoute.swift */,
 				AA7167F51E84395B009C9F93 /* AlbumsRoute.swift */,
 				AA7167F71E84396A009C9F93 /* SongsRoute.swift */,
@@ -314,6 +339,7 @@
 			children = (
 				AAF335A51E89303000F16942 /* Services */,
 				AA7167ED1E843687009C9F93 /* Navigation */,
+				AA1239AB1EB7421F001A7915 /* Playlists */,
 				AA677DF01E7D6F9C00F7C680 /* TopArtists */,
 				AA677E3C1E7D8BCB00F7C680 /* Albums */,
 				AA677E3D1E7D8BD300F7C680 /* Songs */,
@@ -546,9 +572,12 @@
 			files = (
 				AA677E411E7D8C8900F7C680 /* AlbumsViewModel.swift in Sources */,
 				AA7167F41E843747009C9F93 /* NavigationService.swift in Sources */,
+				AA1239B81EB74284001A7915 /* PlaylistPresentationItem.swift in Sources */,
 				AA677DF81E7D709D00F7C680 /* TopArtistsFlow.swift in Sources */,
 				AA677E471E7D8CDD00F7C680 /* AlbumPresentationItem.swift in Sources */,
 				AA4E286F1E8C13B200A2F9C0 /* NavigationServiceFactory.swift in Sources */,
+				AA1239BA1EB7429A001A7915 /* PlaylistTableViewCell.swift in Sources */,
+				AA1239B41EB74261001A7915 /* PlaylistsViewModel.swift in Sources */,
 				AA677E431E7D8CA900F7C680 /* AlbumsViewController.swift in Sources */,
 				AAF335AA1E89306100F16942 /* Services.swift in Sources */,
 				AA677E3F1E7D8C3800F7C680 /* AlbumsFlow.swift in Sources */,
@@ -556,11 +585,14 @@
 				AA677E451E7D8CCC00F7C680 /* AlbumTableViewCell.swift in Sources */,
 				AA677E511E7D937B00F7C680 /* SongPresentationItem.swift in Sources */,
 				AA677DF61E7D707C00F7C680 /* TopArtistsViewModel.swift in Sources */,
+				AA1239BC1EB74858001A7915 /* PlaylistsRoute.swift in Sources */,
 				AA677E491E7D929100F7C680 /* SongsFlow.swift in Sources */,
 				AA677E4D1E7D935F00F7C680 /* SongsViewModel.swift in Sources */,
+				AA1239B01EB74248001A7915 /* PlaylistsFlow.swift in Sources */,
 				AA677DF41E7D706300F7C680 /* TopArtistTableViewCell.swift in Sources */,
 				AA7167F61E84395B009C9F93 /* AlbumsRoute.swift in Sources */,
 				AA677DF21E7D6FDC00F7C680 /* TopArtistsViewController.swift in Sources */,
+				AA1239B21EB74255001A7915 /* PlaylistsViewController.swift in Sources */,
 				AA4E28741E8C2A8F00A2F9C0 /* NavigationServiceType.swift in Sources */,
 				AA4E28721E8C25AC00A2F9C0 /* Navigation.swift in Sources */,
 				AA677E4F1E7D937000F7C680 /* SongTableViewCell.swift in Sources */,

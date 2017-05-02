@@ -14,6 +14,10 @@ struct NavigationServiceFactory {
         let serviceNavigation = NavigationServiceProxy()
         var router = Router()
 
+        router.routes[Navigation.Path.playlists.rawValue] = PlaylistsRoute(
+            serviceNavigation: serviceNavigation,
+            servicePlaylists: services.playlists)
+
         router.routes[Navigation.Path.topArtists.rawValue] = TopArtistsRoute(
             serviceNavigation: serviceNavigation,
             serviceArtists: services.artists

@@ -17,7 +17,7 @@ public protocol AlbumConvertible {
 }
 
 extension AlbumConvertible where Self: AlbumType {
-    final func asAlbum() -> AlbumType {
+    public final func asAlbum() -> AlbumType {
         return self
     }
 }

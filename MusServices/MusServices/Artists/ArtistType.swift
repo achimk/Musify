@@ -17,7 +17,7 @@ public protocol ArtistConvertible {
 }
 
 extension ArtistConvertible where Self: ArtistType {
-    final func asArtist() -> ArtistType {
+    public final func asArtist() -> ArtistType {
         return self
     }
 }

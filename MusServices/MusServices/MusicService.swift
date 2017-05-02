@@ -8,8 +8,11 @@
 
 import Foundation
 import RxSwift
+import MusToolkit
 
 public struct MusicService {
+    // Storage should be inject into MusicService, however for tests purposes we can ommit this functionality.
+    fileprivate var playlistsStorage: MutableBox<Array<PlaylistType>> = MutableBox([])
     public init() { }
 }
 
@@ -57,5 +60,29 @@ extension MusicService: SongsServiceType {
         }
 
         return Observable.just(songs)
+    }
+}
+
+extension MusicService: PlaylistServiceType {
+    public func playlists() -> Observable<Array<PlaylistType>> {
+        return Observable.just(playlistsStorage.value)
+    }
+
+    public func add(playlist: PlaylistType) -> Observable<Bool> {
+        if playlistsStorage.value.contains(where: { $0 == playlist }) {
+            return Observable.just(false)
+        }
+
+        playlistsStorage.value.append(playlist)
+        return Observable.just(true)
+    }
+
+    public func remove(playlist: PlaylistType) -> Observable<Bool> {
+        if let index = playlistsStorage.value.index(where: {$0 == playlist }) {
+            playlistsStorage.value.remove(at: index)
+            return Observable.just(true)
+        }
+
+        return Observable.just(false)
     }
 }

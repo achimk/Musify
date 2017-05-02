@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Result
 import RxSwift
 import RxCocoa
 import MusServices
