@@ -1,0 +1,6 @@
+github "ViccAlexander/Chameleon" "2.2.0"
+github "Quick/Nimble" "v6.0.1"
+github "antitypical/Result" "3.2.1"
+github "AliSoftware/Reusable" "3.0.1"
+github "thoughtbot/Runes" "v4.0.1"
+github "ReactiveX/RxSwift" "3.0.1"
