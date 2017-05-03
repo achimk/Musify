@@ -14,7 +14,7 @@ import MusServices
 import MusToolkit
 
 protocol AlbumsInputs {
-
+    func fetchAlbums()
 }
 
 protocol AlbumsOutputs {
@@ -27,24 +27,29 @@ protocol AlbumsViewModelType {
 }
 
 struct AlbumsViewModel: AlbumsViewModelType {
-    fileprivate let driverAlbums: Driver<Array<AlbumPresentable>>
+    fileprivate let inputFetchAlbums = PublishSubject<Void>()
+    fileprivate let outputAlbums: Driver<Array<AlbumPresentable>>
 
     var inputs: AlbumsInputs { return self }
     var outputs: AlbumsOutputs { return self }
 
     init(service: AlbumsServiceType, artist: ArtistType) {
-        self.driverAlbums = service.albums(fromArtist: artist)
-            .mapResult()
-            .map { $0.recover([]) }
-            .map { $0.map { AlbumPresentationItem(album: $0) as AlbumPresentable } }
+        self.outputAlbums = inputFetchAlbums
+            .asObservable()
+            .flatMap {
+                return service.albums(fromArtist: artist)
+                    .mapResult()
+                    .map { $0.recover([]) }
+                    .map { $0.map { AlbumPresentationItem(album: $0) as AlbumPresentable } }
+            }
             .asDriver(onErrorDriveWith: Driver.never())
     }
 }
 
 extension AlbumsViewModel: AlbumsInputs {
-
+    func fetchAlbums() { inputFetchAlbums.onNext() }
 }
 
 extension AlbumsViewModel: AlbumsOutputs {
-    var onAlbums: Driver<Array<AlbumPresentable>> { return driverAlbums }
+    var onAlbums: Driver<Array<AlbumPresentable>> { return outputAlbums }
 }

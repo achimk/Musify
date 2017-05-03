@@ -16,6 +16,8 @@
 		AA4E286F1E8C13B200A2F9C0 /* NavigationServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E286E1E8C13B200A2F9C0 /* NavigationServiceFactory.swift */; };
 		AA4E28721E8C25AC00A2F9C0 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E28711E8C25AC00A2F9C0 /* Navigation.swift */; };
 		AA4E28741E8C2A8F00A2F9C0 /* NavigationServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E28731E8C2A8F00A2F9C0 /* NavigationServiceType.swift */; };
+		AA58DC351EBA0B7C0024BE8F /* AlbumsEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58DC341EBA0B7C0024BE8F /* AlbumsEventHandler.swift */; };
+		AA58DC4B1EBA37170024BE8F /* AlbumsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58DC4A1EBA37170024BE8F /* AlbumsInteractor.swift */; };
 		AA677DF21E7D6FDC00F7C680 /* TopArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA677DF11E7D6FDC00F7C680 /* TopArtistsViewController.swift */; };
 		AA677DF41E7D706300F7C680 /* TopArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA677DF31E7D706300F7C680 /* TopArtistTableViewCell.swift */; };
 		AA677DF61E7D707C00F7C680 /* TopArtistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA677DF51E7D707C00F7C680 /* TopArtistsViewModel.swift */; };
@@ -169,6 +171,8 @@
 		AA4E286E1E8C13B200A2F9C0 /* NavigationServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationServiceFactory.swift; sourceTree = "<group>"; };
 		AA4E28711E8C25AC00A2F9C0 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		AA4E28731E8C2A8F00A2F9C0 /* NavigationServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationServiceType.swift; sourceTree = "<group>"; };
+		AA58DC341EBA0B7C0024BE8F /* AlbumsEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsEventHandler.swift; sourceTree = "<group>"; };
+		AA58DC4A1EBA37170024BE8F /* AlbumsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsInteractor.swift; sourceTree = "<group>"; };
 		AA677DF11E7D6FDC00F7C680 /* TopArtistsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopArtistsViewController.swift; sourceTree = "<group>"; };
 		AA677DF31E7D706300F7C680 /* TopArtistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopArtistTableViewCell.swift; sourceTree = "<group>"; };
 		AA677DF51E7D707C00F7C680 /* TopArtistsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopArtistsViewModel.swift; sourceTree = "<group>"; };
@@ -280,8 +284,10 @@
 		AA677E3C1E7D8BCB00F7C680 /* Albums */ = {
 			isa = PBXGroup;
 			children = (
+				AA58DC341EBA0B7C0024BE8F /* AlbumsEventHandler.swift */,
 				AA677E3E1E7D8C3800F7C680 /* AlbumsFlow.swift */,
 				AA677E421E7D8CA900F7C680 /* AlbumsViewController.swift */,
+				AA58DC4A1EBA37170024BE8F /* AlbumsInteractor.swift */,
 				AA677E401E7D8C8900F7C680 /* AlbumsViewModel.swift */,
 				AA677E441E7D8CCC00F7C680 /* AlbumTableViewCell.swift */,
 				AA677E461E7D8CDD00F7C680 /* AlbumPresentationItem.swift */,
@@ -570,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA58DC351EBA0B7C0024BE8F /* AlbumsEventHandler.swift in Sources */,
 				AA677E411E7D8C8900F7C680 /* AlbumsViewModel.swift in Sources */,
 				AA7167F41E843747009C9F93 /* NavigationService.swift in Sources */,
 				AA1239B81EB74284001A7915 /* PlaylistPresentationItem.swift in Sources */,
@@ -585,6 +592,7 @@
 				AA677E451E7D8CCC00F7C680 /* AlbumTableViewCell.swift in Sources */,
 				AA677E511E7D937B00F7C680 /* SongPresentationItem.swift in Sources */,
 				AA677DF61E7D707C00F7C680 /* TopArtistsViewModel.swift in Sources */,
+				AA58DC4B1EBA37170024BE8F /* AlbumsInteractor.swift in Sources */,
 				AA1239BC1EB74858001A7915 /* PlaylistsRoute.swift in Sources */,
 				AA677E491E7D929100F7C680 /* SongsFlow.swift in Sources */,
 				AA677E4D1E7D935F00F7C680 /* SongsViewModel.swift in Sources */,

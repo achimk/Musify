@@ -15,15 +15,15 @@ import MusServices
 
 final class AlbumsViewController: UIViewController {
     fileprivate let tableView: UITableView
-    fileprivate let viewModel: AlbumsViewModelType
+    fileprivate let interactor: AlbumsInteractor
+    fileprivate let eventsHandler: AlbumsEventsCenter
     fileprivate let disposeBag = DisposeBag()
-    fileprivate let onSelectAlbum: ((AlbumType) -> Void)?
     fileprivate var albums: Array<AlbumPresentable> = []
     
-    init(service: AlbumsServiceType, artist: ArtistType, onSelectAlbum: ((AlbumType) -> Void)? = nil) {
+    init(service: AlbumsServiceType, artist: ArtistType, eventsHandler: AlbumsEventsCenter) {
         self.tableView = UITableView(frame: CGRect.zero, style: .grouped)
-        self.viewModel = AlbumsViewModel(service: service, artist: artist)
-        self.onSelectAlbum = onSelectAlbum
+        self.eventsHandler = eventsHandler
+        self.interactor = AlbumsInteractor(service: service, artist: artist, eventHandler: eventsHandler)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -55,10 +55,17 @@ final class AlbumsViewController: UIViewController {
     }
 
     private func setupBindings() {
-        viewModel.outputs.onAlbums.drive(onNext: { [weak self] items in
-            self?.albums = items
-            self?.tableView.reloadData()
-        }).addDisposableTo(disposeBag)
+        let hander = AlbumsHandler(output: { [weak self] event in
+            switch event {
+            case .fetched(let albums):
+                self?.albums = albums
+                self?.tableView.reloadData()
+                return true
+            }
+        })
+
+        eventsHandler.handlers.append(hander)
+        _ = eventsHandler.handle(input: .fetch)
     }
 }
 
@@ -68,7 +75,8 @@ extension AlbumsViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onSelectAlbum?(albums[indexPath.item].asAlbum())
+        let album = albums[indexPath.item].asAlbum()
+        _ = eventsHandler.handle(input: .select(album: album))
     }
 }
 
