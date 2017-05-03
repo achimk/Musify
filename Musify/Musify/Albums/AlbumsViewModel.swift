@@ -12,44 +12,44 @@ import RxSwift
 import RxCocoa
 import MusServices
 import MusToolkit
-
-protocol AlbumsInputs {
-    func fetchAlbums()
-}
-
-protocol AlbumsOutputs {
-    var onAlbums: Driver<Array<AlbumPresentable>> { get }
-}
-
-protocol AlbumsViewModelType {
-    var inputs: AlbumsInputs { get }
-    var outputs: AlbumsOutputs { get }
-}
-
-struct AlbumsViewModel: AlbumsViewModelType {
-    fileprivate let inputFetchAlbums = PublishSubject<Void>()
-    fileprivate let outputAlbums: Driver<Array<AlbumPresentable>>
-
-    var inputs: AlbumsInputs { return self }
-    var outputs: AlbumsOutputs { return self }
-
-    init(service: AlbumsServiceType, artist: ArtistType) {
-        self.outputAlbums = inputFetchAlbums
-            .asObservable()
-            .flatMap {
-                return service.albums(fromArtist: artist)
-                    .mapResult()
-                    .map { $0.recover([]) }
-                    .map { $0.map { AlbumPresentationItem(album: $0) as AlbumPresentable } }
-            }
-            .asDriver(onErrorDriveWith: Driver.never())
-    }
-}
-
-extension AlbumsViewModel: AlbumsInputs {
-    func fetchAlbums() { inputFetchAlbums.onNext() }
-}
-
-extension AlbumsViewModel: AlbumsOutputs {
-    var onAlbums: Driver<Array<AlbumPresentable>> { return outputAlbums }
-}
+//
+//protocol AlbumsInputs {
+//    func fetchAlbums()
+//}
+//
+//protocol AlbumsOutputs {
+//    var onAlbums: Driver<Array<AlbumPresentable>> { get }
+//}
+//
+//protocol AlbumsViewModelType {
+//    var inputs: AlbumsInputs { get }
+//    var outputs: AlbumsOutputs { get }
+//}
+//
+//struct AlbumsViewModel: AlbumsViewModelType {
+//    fileprivate let inputFetchAlbums = PublishSubject<Void>()
+//    fileprivate let outputAlbums: Driver<Array<AlbumPresentable>>
+//
+//    var inputs: AlbumsInputs { return self }
+//    var outputs: AlbumsOutputs { return self }
+//
+//    init(service: AlbumsServiceType, artist: ArtistType) {
+//        self.outputAlbums = inputFetchAlbums
+//            .asObservable()
+//            .flatMap {
+//                return service.albums(fromArtist: artist)
+//                    .mapResult()
+//                    .map { $0.recover([]) }
+//                    .map { $0.map { AlbumPresentationItem(album: $0) as AlbumPresentable } }
+//            }
+//            .asDriver(onErrorDriveWith: Driver.never())
+//    }
+//}
+//
+//extension AlbumsViewModel: AlbumsInputs {
+//    func fetchAlbums() { inputFetchAlbums.onNext() }
+//}
+//
+//extension AlbumsViewModel: AlbumsOutputs {
+//    var onAlbums: Driver<Array<AlbumPresentable>> { return outputAlbums }
+//}

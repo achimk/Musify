@@ -31,7 +31,7 @@ struct AlbumsInteractor {
             }).addDisposableTo(disposeBag)
 
         let interactor = self
-        let handler = AlbumsHandler(input: { (event) -> Bool in
+        eventHandler.handlers.create(input: { (event) -> Bool in
             switch event {
             case .fetch:
                 interactor.inputFetch.onNext()
@@ -40,7 +40,5 @@ struct AlbumsInteractor {
                 return false
             }
         })
-
-        eventHandler.handlers.append(handler)
     }
 }

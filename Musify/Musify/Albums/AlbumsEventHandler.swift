@@ -78,7 +78,7 @@ struct AlbumsHandler: AlbumsEventHandling {
 
 final class AlbumsEventsCenter: AlbumsEventHandling {
     var plugins: Array<AlbumsEventListening> = []
-    var handlers: Array<AlbumsEventHandling> = []
+    var handlers = EventsHandlerBuilder()
 
     init() {
 

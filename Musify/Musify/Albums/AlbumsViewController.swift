@@ -55,7 +55,7 @@ final class AlbumsViewController: UIViewController {
     }
 
     private func setupBindings() {
-        let hander = AlbumsHandler(output: { [weak self] event in
+        eventsHandler.handlers.create(output: { [weak self] (event) -> Bool in
             switch event {
             case .fetched(let albums):
                 self?.albums = albums
@@ -64,7 +64,6 @@ final class AlbumsViewController: UIViewController {
             }
         })
 
-        eventsHandler.handlers.append(hander)
         _ = eventsHandler.handle(input: .fetch)
     }
 }
