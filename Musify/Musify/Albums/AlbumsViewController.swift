@@ -11,19 +11,18 @@ import UIKit
 import Reusable
 import RxSwift
 import RxCocoa
+import MusUI
 import MusServices
 
 final class AlbumsViewController: UIViewController {
     fileprivate let tableView: UITableView
-    fileprivate let interactor: AlbumsInteractor
-    fileprivate let eventsHandler: AlbumsEventsCenter
+    fileprivate let center: AlbumsEventsCenter
     fileprivate let disposeBag = DisposeBag()
     fileprivate var albums: Array<AlbumPresentable> = []
     
-    init(service: AlbumsServiceType, artist: ArtistType, eventsHandler: AlbumsEventsCenter) {
+    init(center: AlbumsEventsCenter) {
         self.tableView = UITableView(frame: CGRect.zero, style: .grouped)
-        self.eventsHandler = eventsHandler
-        self.interactor = AlbumsInteractor(service: service, artist: artist, eventHandler: eventsHandler)
+        self.center = center
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -34,12 +33,13 @@ final class AlbumsViewController: UIViewController {
     deinit {
         tableView.delegate = nil
         tableView.dataSource = nil
+        print("['] Controller deinit")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setupBindings()
+        center.inputs.on(.request)
     }
 
     private func setupTableView() {
@@ -53,18 +53,16 @@ final class AlbumsViewController: UIViewController {
         tableView.frame = view.bounds
         view.addSubview(tableView)
     }
+}
 
-    private func setupBindings() {
-        eventsHandler.handlers.create(output: { [weak self] (event) -> Bool in
-            switch event {
-            case .fetched(let albums):
-                self?.albums = albums
-                self?.tableView.reloadData()
-                return true
-            }
-        })
-
-        _ = eventsHandler.handle(input: .fetch)
+extension AlbumsViewController: EventHandling {
+    func handle(_ event: AlbumsEvent.Output) -> Bool {
+        switch event {
+        case .present(let albums):
+            self.albums = albums
+            self.tableView.reloadData()
+            return true
+        }
     }
 }
 
@@ -75,7 +73,7 @@ extension AlbumsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let album = albums[indexPath.item].asAlbum()
-        _ = eventsHandler.handle(input: .select(album: album))
+        center.inputs.on(.select(album: album))
     }
 }
 

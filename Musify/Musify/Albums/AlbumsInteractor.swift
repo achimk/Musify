@@ -9,15 +9,15 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import MusUI
 import MusServices
 
-struct AlbumsInteractor {
-    private let inputFetch = PublishSubject<Void>()
+final class AlbumsInteractor: EventHandling {
+    private let inputRequest = PublishSubject<Void>()
     private let disposeBag = DisposeBag()
 
-    init(service: AlbumsServiceType, artist: ArtistType, eventHandler: AlbumsEventsCenter) {
-
-        inputFetch
+    init(service: AlbumsServiceType, artist: ArtistType, listener: EventListener<AlbumsEvent.Output>) {
+        self.inputRequest
             .asObservable()
             .flatMap {
                 return service.albums(fromArtist: artist)
@@ -27,18 +27,22 @@ struct AlbumsInteractor {
             }
             .asDriver(onErrorDriveWith: Driver.never())
             .drive(onNext: { (albums) in
-                _ = eventHandler.handle(output: .fetched(albums: albums))
+                listener.on(.present(albums: albums))
             }).addDisposableTo(disposeBag)
+    }
 
-        let interactor = self
-        eventHandler.handlers.create(input: { (event) -> Bool in
-            switch event {
-            case .fetch:
-                interactor.inputFetch.onNext()
-                return true
-            default:
-                return false
-            }
-        })
+    deinit {
+        print("['] Interactor deinit")
+    }
+
+    func handle(_ event: AlbumsEvent.Input) -> Bool {
+        switch event {
+        case .request:
+            inputRequest.onNext()
+            return true
+
+        default:
+            return false
+        }
     }
 }
