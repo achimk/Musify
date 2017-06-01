@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MusTodo/MusTodo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MusifyDeeplink/MusifyDeeplink.xcodeproj">
    </FileRef>
    <FileRef
