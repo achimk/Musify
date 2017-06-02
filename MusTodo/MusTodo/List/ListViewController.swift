@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 final class ListViewController: UIViewController {
+    fileprivate var items: Array<TodoItemPresentable> = []
+    fileprivate let tableView: UITableView
     var presenter: ListPresenterInputs!
 
     init() {
-        /*
-         Inject additional dependencies here
-         */
+        self.tableView = UITableView(frame: CGRect.zero, style: .grouped)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -30,6 +30,8 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+        configureTableView()
+        configureNavigationItems()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,11 +54,72 @@ final class ListViewController: UIViewController {
         presenter.viewDidDisappear(animated)
     }
 
+    @IBAction func presentInput() {
+        let alert = UIAlertController(
+            title: "Task",
+            message: "Please enter task description:",
+            preferredStyle: UIAlertControllerStyle.alert
+        )
+
+        alert.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.default, handler: { [weak self] action in
+            guard let text = alert.textFields?.first?.text else { return }
+            self?.presenter.add(withText: text)
+        }))
+        alert.addTextField(configurationHandler: {(textField: UITextField) in
+            textField.placeholder = "Description..."
+        })
+
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func configureTableView() {
+        tableView.register(TodoTableViewCell.self, forCellReuseIdentifier: "TodoCell")
+
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        tableView.translatesAutoresizingMaskIntoConstraints = true
+        tableView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        tableView.frame = view.bounds
+        view.addSubview(tableView)
+    }
+
+    private func configureNavigationItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(ListViewController.presentInput)
+        )
+    }
 }
 
 extension ListViewController: ListPresenterOutputs {
-    /*
-     Implement ListPresenterOutputs protocol
-     */
+    func present(items: Array<TodoItemPresentable>) {
+        self.items = items
+        tableView.reloadData()
+    }
+}
+
+extension ListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let todo = items[indexPath.row].asTodo()
+        presenter.toggle(todo: todo)
+    }
+}
+
+extension ListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as? TodoTableViewCell
+        cell?.configure(using: items[indexPath.item])
+        return cell ?? UITableViewCell()
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
 }
 

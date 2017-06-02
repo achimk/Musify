@@ -19,6 +19,9 @@ final class ListModuleBuilder {
 
     func build() -> UIViewController {
 
+        // Dependencies
+        let service = InMemoryTodoService()
+
         /*
          Navigator
          */
@@ -31,7 +34,10 @@ final class ListModuleBuilder {
 
         let presenter = ListPresenter(navigator: navigator, outputs: view)
 
-        let interactor = ListInteractor(outputs: presenter)
+        let interactor = ListInteractor(
+            outputs: presenter,
+            service: service
+        )
 
         /*
          Interactor -> Presenter -> View

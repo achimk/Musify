@@ -20,14 +20,15 @@ protocol ListPresenterAppearance {
  Inputs declarations here (Presenter)
  */
 protocol ListPresenterInputs: class, ListPresenterAppearance {
-
+    func add(withText text: String)
+    func toggle(todo: TodoType)
 }
 
 /**
  Outputs declarations here (ViewController)
  */
 protocol ListPresenterOutputs: class {
-
+    func present(items: Array<TodoItemPresentable>)
 }
 
 protocol ListPresenterType {
@@ -46,9 +47,6 @@ final class ListPresenter: ListPresenterType {
 
         self.navigator = navigator
         self.outputs = outputs
-        /*
-         Inject additional dependencies here
-         */
     }
 
     deinit {
@@ -74,13 +72,18 @@ extension ListPresenter: ListPresenterAppearance {
 }
 
 extension ListPresenter: ListPresenterInputs {
-    /*
-     Implement ListPresenterInputs protocol
-     */
+    func add(withText text: String) {
+        interactor.add(withText: text)
+    }
+
+    func toggle(todo: TodoType) {
+        interactor.toggle(todo: todo)
+    }
 }
 
 extension ListPresenter: ListInteractorOutputs {
-    /*
-     Implement ListInteractorOutputs protocol
-     */
+    func all(todos elements: Array<TodoType>) {
+        let items: Array<TodoItemPresentable> = elements.map { TodoPresentationItem($0) }
+        outputs?.present(items: items)
+    }
 }
