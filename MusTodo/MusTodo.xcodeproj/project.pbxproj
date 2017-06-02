@@ -18,9 +18,6 @@
 		AA45EFD21EE0378C00E6002C /* ListNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45EFCD1EE0378B00E6002C /* ListNavigator.swift */; };
 		AA45F0181EE04F4A00E6002C /* TodoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45F0171EE04F4A00E6002C /* TodoType.swift */; };
 		AA45F01A1EE04F5900E6002C /* TodoServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45F0191EE04F5900E6002C /* TodoServiceType.swift */; };
-		AA45F01D1EE0549A00E6002C /* TodoPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45F01C1EE0549A00E6002C /* TodoPresentationItem.swift */; };
-		AA45F01F1EE054A300E6002C /* TodoItemPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45F01E1EE054A300E6002C /* TodoItemPresentable.swift */; };
-		AA45F0221EE055F300E6002C /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45F0211EE055F300E6002C /* TodoTableViewCell.swift */; };
 		AAADA3A21EE1503300FAC9B6 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAADA3A11EE1503300FAC9B6 /* TodoViewModel.swift */; };
 		AAADA3A41EE1503D00FAC9B6 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAADA3A31EE1503D00FAC9B6 /* TodoView.swift */; };
 		AAADA3A71EE1560D00FAC9B6 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAADA3A61EE1560D00FAC9B6 /* TodoModel.swift */; };
@@ -53,9 +50,6 @@
 		AA45EFCD1EE0378B00E6002C /* ListNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNavigator.swift; sourceTree = "<group>"; };
 		AA45F0171EE04F4A00E6002C /* TodoType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoType.swift; sourceTree = "<group>"; };
 		AA45F0191EE04F5900E6002C /* TodoServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoServiceType.swift; sourceTree = "<group>"; };
-		AA45F01C1EE0549A00E6002C /* TodoPresentationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoPresentationItem.swift; sourceTree = "<group>"; };
-		AA45F01E1EE054A300E6002C /* TodoItemPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemPresentable.swift; sourceTree = "<group>"; };
-		AA45F0211EE055F300E6002C /* TodoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		AAADA3A11EE1503300FAC9B6 /* TodoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		AAADA3A31EE1503D00FAC9B6 /* TodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
 		AAADA3A61EE1560D00FAC9B6 /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
@@ -125,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				AA45F0201EE055DA00E6002C /* Cells */,
-				AA45F01B1EE0546500E6002C /* Presentation */,
 				AA45EFCA1EE0378B00E6002C /* ListModuleBuilder.swift */,
 				AA45EFCD1EE0378B00E6002C /* ListNavigator.swift */,
 				AA45EFC91EE0378B00E6002C /* ListInteractor.swift */,
@@ -170,19 +163,9 @@
 			path = Todo;
 			sourceTree = "<group>";
 		};
-		AA45F01B1EE0546500E6002C /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				AA45F01E1EE054A300E6002C /* TodoItemPresentable.swift */,
-				AA45F01C1EE0549A00E6002C /* TodoPresentationItem.swift */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
 		AA45F0201EE055DA00E6002C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				AA45F0211EE055F300E6002C /* TodoTableViewCell.swift */,
 				AAADA3A81EE1668700FAC9B6 /* ContainerTableViewCell.swift */,
 			);
 			path = Cells;
@@ -321,11 +304,8 @@
 				AA45EFD01EE0378C00E6002C /* ListPresenter.swift in Sources */,
 				AA45EFD11EE0378C00E6002C /* ListViewController.swift in Sources */,
 				AA45EFCF1EE0378C00E6002C /* ListModuleBuilder.swift in Sources */,
-				AA45F01D1EE0549A00E6002C /* TodoPresentationItem.swift in Sources */,
 				AAADA3A91EE1668700FAC9B6 /* ContainerTableViewCell.swift in Sources */,
-				AA45F0221EE055F300E6002C /* TodoTableViewCell.swift in Sources */,
 				AA45F0181EE04F4A00E6002C /* TodoType.swift in Sources */,
-				AA45F01F1EE054A300E6002C /* TodoItemPresentable.swift in Sources */,
 				AA45EFD21EE0378C00E6002C /* ListNavigator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
