@@ -17,9 +17,11 @@ protocol TodoServiceType {
 }
 
 final class InMemoryTodoService: TodoServiceType {
-    private var todos: Array<TodoType> = []
+    private var todos: Array<TodoType>
 
-    init() { }
+    init(_ todos: Array<TodoType> = []) {
+        self.todos = todos
+    }
 
     func allTodos() -> Array<TodoType> {
         return todos

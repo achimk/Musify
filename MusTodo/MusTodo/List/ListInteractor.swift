@@ -13,17 +13,14 @@ import Foundation
  */
 protocol ListInteractorInputs: class {
     func add(withText text: String)
-    func toggle(todo: TodoType)
-//    func add(todo: TodoType)
-//    func update(todo: TodoType)
-//    func remove(todo: TodoType)
+    func reload()
 }
 
 /**
  Outputs declarations here (Presenter)
  */
 protocol ListInteractorOutputs: class {
-    func all(todos elements: Array<TodoType>)
+    func all(models: Array<TodoModelType>)
 }
 
 protocol ListInteractorType {
@@ -53,24 +50,33 @@ extension ListInteractor: ListInteractorInputs {
         add(todo: service.create(withText: text))
     }
 
-    func toggle(todo: TodoType) {
-        var todo = Todo.from(todo)
-        todo.done = !todo.done
-        update(todo: todo)
+    func reload() {
+        let todos = service.allTodos()
+        let models = convert(todos: todos)
+        output(models: models)
     }
 
-    func add(todo: TodoType) {
+    private func add(todo: TodoType) {
         service.add(todo: todo)
-        outputs?.all(todos: service.allTodos())
+        reload()
     }
 
-    func update(todo: TodoType) {
+    private func update(todo: TodoType) {
         service.update(todo: todo)
-        outputs?.all(todos: service.allTodos())
+        reload()
     }
 
-    func remove(todo: TodoType) {
+    private func remove(todo: TodoType) {
         service.remove(todo: todo)
-        outputs?.all(todos: service.allTodos())
+        reload()
+    }
+
+    private func convert(todos: Array<TodoType>) -> Array<TodoModelType> {
+        let service = self.service
+        return todos.map { TodoModel(todo: $0, service: service) }
+    }
+
+    private func output(models: Array<TodoModelType>) {
+        outputs?.all(models: models)
     }
 }

@@ -8,6 +8,14 @@
 
 import Foundation
 
+protocol TodoConvertible {
+    func asTodo() -> TodoType
+}
+
+extension TodoConvertible where Self: TodoType {
+    func asTodo() -> TodoType { return self }
+}
+
 protocol TodoType {
     var identifier: String { get }
     var text: String { get }

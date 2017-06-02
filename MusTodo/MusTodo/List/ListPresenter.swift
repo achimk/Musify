@@ -20,15 +20,16 @@ protocol ListPresenterAppearance {
  Inputs declarations here (Presenter)
  */
 protocol ListPresenterInputs: class, ListPresenterAppearance {
+    func reload()
     func add(withText text: String)
-    func toggle(todo: TodoType)
 }
 
 /**
  Outputs declarations here (ViewController)
  */
 protocol ListPresenterOutputs: class {
-    func present(items: Array<TodoItemPresentable>)
+//    func present(items: Array<TodoItemPresentable>)
+    func present(viewModels: Array<TodoViewModelType>)
 }
 
 protocol ListPresenterType {
@@ -76,14 +77,14 @@ extension ListPresenter: ListPresenterInputs {
         interactor.add(withText: text)
     }
 
-    func toggle(todo: TodoType) {
-        interactor.toggle(todo: todo)
+    func reload() {
+        interactor.reload()
     }
 }
 
 extension ListPresenter: ListInteractorOutputs {
-    func all(todos elements: Array<TodoType>) {
-        let items: Array<TodoItemPresentable> = elements.map { TodoPresentationItem($0) }
-        outputs?.present(items: items)
+    func all(models: Array<TodoModelType>) {
+        let viewModels = models.map { TodoViewModel(model: $0) }
+        outputs?.present(viewModels: viewModels)
     }
 }

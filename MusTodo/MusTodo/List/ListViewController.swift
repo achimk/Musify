@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 final class ListViewController: UIViewController {
-    fileprivate var items: Array<TodoItemPresentable> = []
+//    fileprivate var items: Array<TodoItemPresentable> = []
+    fileprivate var viewModels: Array<TodoViewModelType> = []
     fileprivate let tableView: UITableView
     var presenter: ListPresenterInputs!
 
@@ -29,9 +30,12 @@ final class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
+
         configureTableView()
         configureNavigationItems()
+
+        presenter.viewDidLoad()
+        presenter.reload()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +77,7 @@ final class ListViewController: UIViewController {
     }
 
     private func configureTableView() {
-        tableView.register(TodoTableViewCell.self, forCellReuseIdentifier: "TodoCell")
+        tableView.register(ContainerTableViewCell.self, forCellReuseIdentifier: "TodoCell")
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -94,8 +98,8 @@ final class ListViewController: UIViewController {
 }
 
 extension ListViewController: ListPresenterOutputs {
-    func present(items: Array<TodoItemPresentable>) {
-        self.items = items
+    func present(viewModels: Array<TodoViewModelType>) {
+        self.viewModels = viewModels
         tableView.reloadData()
     }
 }
@@ -106,20 +110,19 @@ extension ListViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let todo = items[indexPath.row].asTodo()
-        presenter.toggle(todo: todo)
+        print("did select: \(indexPath.item)")
     }
 }
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as? TodoTableViewCell
-        cell?.configure(using: items[indexPath.item])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as? ContainerTableViewCell
+        cell?.viewModel = viewModels[indexPath.item]
         return cell ?? UITableViewCell()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return viewModels.count
     }
 }
 

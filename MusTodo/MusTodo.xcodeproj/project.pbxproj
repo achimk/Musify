@@ -21,6 +21,10 @@
 		AA45F01D1EE0549A00E6002C /* TodoPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45F01C1EE0549A00E6002C /* TodoPresentationItem.swift */; };
 		AA45F01F1EE054A300E6002C /* TodoItemPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45F01E1EE054A300E6002C /* TodoItemPresentable.swift */; };
 		AA45F0221EE055F300E6002C /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45F0211EE055F300E6002C /* TodoTableViewCell.swift */; };
+		AAADA3A21EE1503300FAC9B6 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAADA3A11EE1503300FAC9B6 /* TodoViewModel.swift */; };
+		AAADA3A41EE1503D00FAC9B6 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAADA3A31EE1503D00FAC9B6 /* TodoView.swift */; };
+		AAADA3A71EE1560D00FAC9B6 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAADA3A61EE1560D00FAC9B6 /* TodoModel.swift */; };
+		AAADA3A91EE1668700FAC9B6 /* ContainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAADA3A81EE1668700FAC9B6 /* ContainerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,10 @@
 		AA45F01C1EE0549A00E6002C /* TodoPresentationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoPresentationItem.swift; sourceTree = "<group>"; };
 		AA45F01E1EE054A300E6002C /* TodoItemPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemPresentable.swift; sourceTree = "<group>"; };
 		AA45F0211EE055F300E6002C /* TodoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		AAADA3A11EE1503300FAC9B6 /* TodoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		AAADA3A31EE1503D00FAC9B6 /* TodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		AAADA3A61EE1560D00FAC9B6 /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		AAADA3A81EE1668700FAC9B6 /* ContainerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +146,9 @@
 		AA45EFD41EE0381600E6002C /* Todo */ = {
 			isa = PBXGroup;
 			children = (
+				AAADA3A61EE1560D00FAC9B6 /* TodoModel.swift */,
+				AAADA3A11EE1503300FAC9B6 /* TodoViewModel.swift */,
+				AAADA3A31EE1503D00FAC9B6 /* TodoView.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -172,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				AA45F0211EE055F300E6002C /* TodoTableViewCell.swift */,
+				AAADA3A81EE1668700FAC9B6 /* ContainerTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -186,6 +198,7 @@
 				AA45EFA11EE036B400E6002C /* Sources */,
 				AA45EFA21EE036B400E6002C /* Frameworks */,
 				AA45EFA31EE036B400E6002C /* Resources */,
+				AAADA3A51EE1553E00FAC9B6 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -273,18 +286,43 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AAADA3A51EE1553E00FAC9B6 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Reusable.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA45EFA11EE036B400E6002C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAADA3A21EE1503300FAC9B6 /* TodoViewModel.swift in Sources */,
 				AA45EFCE1EE0378B00E6002C /* ListInteractor.swift in Sources */,
+				AAADA3A41EE1503D00FAC9B6 /* TodoView.swift in Sources */,
 				AA45F01A1EE04F5900E6002C /* TodoServiceType.swift in Sources */,
 				AA45EFA91EE036B400E6002C /* AppDelegate.swift in Sources */,
+				AAADA3A71EE1560D00FAC9B6 /* TodoModel.swift in Sources */,
 				AA45EFD01EE0378C00E6002C /* ListPresenter.swift in Sources */,
 				AA45EFD11EE0378C00E6002C /* ListViewController.swift in Sources */,
 				AA45EFCF1EE0378C00E6002C /* ListModuleBuilder.swift in Sources */,
 				AA45F01D1EE0549A00E6002C /* TodoPresentationItem.swift in Sources */,
+				AAADA3A91EE1668700FAC9B6 /* ContainerTableViewCell.swift in Sources */,
 				AA45F0221EE055F300E6002C /* TodoTableViewCell.swift in Sources */,
 				AA45F0181EE04F4A00E6002C /* TodoType.swift in Sources */,
 				AA45F01F1EE054A300E6002C /* TodoItemPresentable.swift in Sources */,
@@ -348,6 +386,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -398,6 +437,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -486,6 +526,7 @@
 				AA45EFC41EE036B400E6002C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA45EFC51EE036B400E6002C /* Build configuration list for PBXNativeTarget "MusTodoTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +535,7 @@
 				AA45EFC71EE036B400E6002C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

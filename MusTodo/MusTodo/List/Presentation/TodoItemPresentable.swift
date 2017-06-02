@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol TodoConvertible {
-    func asTodo() -> TodoType
-}
-
 protocol TodoItemPresentable: TodoConvertible {
     var attributedText: NSAttributedString { get }
     var isDone: Bool { get }
