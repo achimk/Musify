@@ -8,11 +8,9 @@
 
 import Foundation
 import UIKit
-import RxSwift
 
 final class ContainerTableViewCell: UITableViewCell {
     fileprivate let viewComponent = TodoView()
-    fileprivate var disposeBag = DisposeBag()
 
     var viewModel: TodoViewModelType? {
         willSet { unbind() }
@@ -51,17 +49,13 @@ final class ContainerTableViewCell: UITableViewCell {
             vm?.inputs.toggle()
         }
 
-        let label = viewComponent.textLabel ?? UILabel()
-        vm?.outputs.onUpdateText().bindTo(label.rx.attributedText).addDisposableTo(disposeBag)
-        vm?.outputs.onUpdateDone().map({ (flag) -> UITableViewCellAccessoryType in
-            return flag ? .checkmark : .none
-        }).subscribe(onNext: { [weak self] accessory in
-            self?.viewComponent.accessoryType = accessory
-        }).addDisposableTo(disposeBag)
+        vm?.outputs.update = { [weak self] item in
+            self?.viewComponent.textLabel?.attributedText = item.attributedText
+            self?.viewComponent.accessoryType = item.isDone ? .checkmark : .none
+        }
     }
 
     private func unbind() {
-        disposeBag = DisposeBag()
         viewComponent.onTapAction = nil
         viewComponent.textLabel?.attributedText = nil
         viewComponent.accessoryType = .none

@@ -21,7 +21,7 @@ final class ListModuleBuilder {
 
         // Dependencies
         let service = InMemoryTodoService()
-        (0 ..< 10).forEach { (index) in
+        (0 ..< 5).forEach { (index) in
             let todo = service.create(withText: "Todo task (\(index + 1))")
             service.add(todo: todo)
         }

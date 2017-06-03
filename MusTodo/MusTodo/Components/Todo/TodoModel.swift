@@ -13,10 +13,10 @@ protocol TodoModelInputs: class {
 }
 
 protocol TodoModelOutputs: class {
-    func updated(todo: TodoType)
+    func update(_ todo: TodoType)
 }
 
-protocol TodoModelType: TodoConvertible {
+protocol TodoModelType {
     var inputs: TodoModelInputs { get }
     var outputs: TodoModelOutputs? { set get }
 }
@@ -26,15 +26,13 @@ final class TodoModel: TodoModelType {
     fileprivate let service: TodoServiceType
 
     var inputs: TodoModelInputs { return self }
-    weak var outputs: TodoModelOutputs?
+    weak var outputs: TodoModelOutputs? {
+        didSet { outputs?.update(todo) }
+    }
 
     init(todo: TodoType, service: TodoServiceType) {
         self.todo = todo
         self.service = service
-    }
-
-    func asTodo() -> TodoType {
-        return todo
     }
 }
 
@@ -48,6 +46,6 @@ extension TodoModel: TodoModelInputs {
     private func update(todo: TodoType) {
         service.update(todo: todo)
         self.todo = todo
-        outputs?.updated(todo: todo)
+        outputs?.update(todo)
     }
 }

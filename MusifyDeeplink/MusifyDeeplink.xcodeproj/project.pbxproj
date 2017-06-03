@@ -558,6 +558,7 @@
 				AAC82BB91E994F0600ADD6DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAC82BBA1E994F0600ADD6DD /* Build configuration list for PBXNativeTarget "MusifyDeeplinkTests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +567,7 @@
 				AAC82BBC1E994F0600ADD6DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

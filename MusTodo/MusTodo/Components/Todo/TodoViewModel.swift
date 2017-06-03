@@ -7,15 +7,13 @@
 //
 
 import Foundation
-import RxSwift
 
-protocol TodoViewModelInputs {
+protocol TodoViewModelInputs: class {
     func toggle()
 }
 
-protocol TodoViewModelOutputs {
-    func onUpdateText() -> Observable<NSAttributedString>
-    func onUpdateDone() -> Observable<Bool>
+protocol TodoViewModelOutputs: class {
+    var update: ((TodoItemPresentable) -> Void) { set get }
 }
 
 protocol TodoViewModelType {
@@ -25,25 +23,25 @@ protocol TodoViewModelType {
 
 final class TodoViewModel: TodoViewModelType {
     fileprivate let model: TodoModelType
-    fileprivate let inputText: Variable<String>
-    fileprivate let inputDone: Variable<Bool>
+    fileprivate var item: TodoItemPresentable? {
+        didSet {
+            updateIfNeeded()
+        }
+    }
 
     var inputs: TodoViewModelInputs { return self }
     var outputs: TodoViewModelOutputs { return self }
 
+    var update: ((TodoItemPresentable) -> Void) {
+        didSet {
+            updateIfNeeded()
+        }
+    }
+
     init(model: TodoModelType) {
-        let todo = model.asTodo()
-        self.inputText = Variable(todo.text)
-        self.inputDone = Variable(todo.done)
+        self.update = { _ in }
         self.model = model
         self.model.outputs = self
-    }
-}
-
-extension TodoViewModel: TodoModelOutputs {
-    func updated(todo: TodoType) {
-        inputText.value = todo.text
-        inputDone.value = todo.done
     }
 }
 
@@ -54,11 +52,16 @@ extension TodoViewModel: TodoViewModelInputs {
 }
 
 extension TodoViewModel: TodoViewModelOutputs {
-    func onUpdateText() -> Observable<NSAttributedString> {
-        return inputText.asObservable().map { NSAttributedString(string: $0) }
-    }
+}
 
-    func onUpdateDone() -> Observable<Bool> {
-        return inputDone.asObservable()
+extension TodoViewModel: TodoModelOutputs {
+    func update(_ todo: TodoType) {
+        item = TodoPresentationItem(todo)
+    }
+}
+
+extension TodoViewModel {
+    fileprivate func updateIfNeeded() {
+        if let item = item { update(item) }
     }
 }
