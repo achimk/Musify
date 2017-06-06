@@ -22,7 +22,7 @@ struct SongsRoute: Routable {
         guard let name = location.arguments["album"] else { return }
 
         let album = Album(name: name)
-        let flow = SongsFlow(serviceSongs: serviceSongs, album: album)
+        let flow = SongsFeature(serviceSongs: serviceSongs, album: album)
         flow.present(using: presenter)
     }
 }

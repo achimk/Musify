@@ -45,8 +45,8 @@ final class AlbumsViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        presenter.viewDidDisappear(animated)
+        super.viewDidAppear(animated)
+        presenter.viewDidAppear(animated)
         appearsFirstTime = false
     }
 
