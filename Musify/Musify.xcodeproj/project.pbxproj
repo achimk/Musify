@@ -16,6 +16,9 @@
 		AA1876E71EE72E1700FB5735 /* TopArtistsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1876E61EE72E1700FB5735 /* TopArtistsFeature.swift */; };
 		AA1877581EE72FE800FB5735 /* FeatureTopArtists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA18773F1EE72F0D00FB5735 /* FeatureTopArtists.framework */; };
 		AA1877591EE72FE800FB5735 /* FeatureTopArtists.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA18773F1EE72F0D00FB5735 /* FeatureTopArtists.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA1877891EE730E700FB5735 /* FeatureAlbums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1877861EE7309E00FB5735 /* FeatureAlbums.framework */; };
+		AA18778A1EE730E700FB5735 /* FeatureAlbums.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1877861EE7309E00FB5735 /* FeatureAlbums.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA1877A21EE738A100FB5735 /* AlbumsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1877A11EE738A100FB5735 /* AlbumsFeature.swift */; };
 		AA4E286F1E8C13B200A2F9C0 /* NavigationServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E286E1E8C13B200A2F9C0 /* NavigationServiceFactory.swift */; };
 		AA4E28721E8C25AC00A2F9C0 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E28711E8C25AC00A2F9C0 /* Navigation.swift */; };
 		AA4E28741E8C2A8F00A2F9C0 /* NavigationServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E28731E8C2A8F00A2F9C0 /* NavigationServiceType.swift */; };
@@ -80,6 +83,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = AA18771E1EE72F0C00FB5735;
 			remoteInfo = FeatureTopArtists;
+		};
+		AA1877851EE7309E00FB5735 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA1877801EE7309D00FB5735 /* FeatureAlbums.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA1877661EE7309D00FB5735;
+			remoteInfo = FeatureAlbums;
+		};
+		AA1877871EE7309E00FB5735 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA1877801EE7309D00FB5735 /* FeatureAlbums.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA18776F1EE7309D00FB5735;
+			remoteInfo = FeatureAlbumsTests;
+		};
+		AA18778B1EE730E700FB5735 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA1877801EE7309D00FB5735 /* FeatureAlbums.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AA1877651EE7309D00FB5735;
+			remoteInfo = FeatureAlbums;
 		};
 		AA677E001E7D760D00F7C680 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -184,6 +208,7 @@
 				AA1877591EE72FE800FB5735 /* FeatureTopArtists.framework in Embed Frameworks */,
 				AAC82BF71E996A0800ADD6DD /* MusServices.framework in Embed Frameworks */,
 				AAC82BEE1E9969F300ADD6DD /* MusUI.framework in Embed Frameworks */,
+				AA18778A1EE730E700FB5735 /* FeatureAlbums.framework in Embed Frameworks */,
 				AAC82BF31E996A0100ADD6DD /* MusToolkit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -200,6 +225,8 @@
 		AA1239BB1EB74858001A7915 /* PlaylistsRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsRoute.swift; sourceTree = "<group>"; };
 		AA1876E61EE72E1700FB5735 /* TopArtistsFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopArtistsFeature.swift; sourceTree = "<group>"; };
 		AA1877391EE72F0C00FB5735 /* FeatureTopArtists.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FeatureTopArtists.xcodeproj; path = FeatureTopArtists/FeatureTopArtists.xcodeproj; sourceTree = "<group>"; };
+		AA1877801EE7309D00FB5735 /* FeatureAlbums.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FeatureAlbums.xcodeproj; path = FeatureAlbums/FeatureAlbums.xcodeproj; sourceTree = "<group>"; };
+		AA1877A11EE738A100FB5735 /* AlbumsFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsFeature.swift; sourceTree = "<group>"; };
 		AA4E286E1E8C13B200A2F9C0 /* NavigationServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationServiceFactory.swift; sourceTree = "<group>"; };
 		AA4E28711E8C25AC00A2F9C0 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		AA4E28731E8C2A8F00A2F9C0 /* NavigationServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationServiceType.swift; sourceTree = "<group>"; };
@@ -245,6 +272,7 @@
 				AA1877581EE72FE800FB5735 /* FeatureTopArtists.framework in Frameworks */,
 				AAAFE84D1E82B7CB00FF6A81 /* MusUI.framework in Frameworks */,
 				AA677E271E7D79DB00F7C680 /* MusToolkit.framework in Frameworks */,
+				AA1877891EE730E700FB5735 /* FeatureAlbums.framework in Frameworks */,
 				AA677E061E7D763B00F7C680 /* MusServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +304,15 @@
 			children = (
 				AA18773F1EE72F0D00FB5735 /* FeatureTopArtists.framework */,
 				AA1877411EE72F0D00FB5735 /* FeatureTopArtistsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA1877811EE7309D00FB5735 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA1877861EE7309E00FB5735 /* FeatureAlbums.framework */,
+				AA1877881EE7309E00FB5735 /* FeatureAlbumsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -361,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				AA1877391EE72F0C00FB5735 /* FeatureTopArtists.xcodeproj */,
+				AA1877801EE7309D00FB5735 /* FeatureAlbums.xcodeproj */,
 				AAAFE8401E82B7B100FF6A81 /* MusUI.xcodeproj */,
 				AA677DFB1E7D760D00F7C680 /* MusServices.xcodeproj */,
 				AA677E1E1E7D79CA00F7C680 /* MusToolkit.xcodeproj */,
@@ -411,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				AA1876E61EE72E1700FB5735 /* TopArtistsFeature.swift */,
+				AA1877A11EE738A100FB5735 /* AlbumsFeature.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -448,14 +487,15 @@
 			buildRules = (
 			);
 			dependencies = (
-				AA1877571EE72FD300FB5735 /* PBXTargetDependency */,
 				AAAFE84C1E82B7C300FF6A81 /* PBXTargetDependency */,
 				AA677E291E7D79E400F7C680 /* PBXTargetDependency */,
 				AA677E051E7D761D00F7C680 /* PBXTargetDependency */,
+				AA1877571EE72FD300FB5735 /* PBXTargetDependency */,
 				AAC82BF01E9969F300ADD6DD /* PBXTargetDependency */,
 				AAC82BF51E996A0100ADD6DD /* PBXTargetDependency */,
 				AAC82BF91E996A0800ADD6DD /* PBXTargetDependency */,
 				AA18775B1EE72FE800FB5735 /* PBXTargetDependency */,
+				AA18778C1EE730E700FB5735 /* PBXTargetDependency */,
 			);
 			name = Musify;
 			productName = Musify;
@@ -515,6 +555,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = AA1877811EE7309D00FB5735 /* Products */;
+					ProjectRef = AA1877801EE7309D00FB5735 /* FeatureAlbums.xcodeproj */;
+				},
+				{
 					ProductGroup = AA18773A1EE72F0C00FB5735 /* Products */;
 					ProjectRef = AA1877391EE72F0C00FB5735 /* FeatureTopArtists.xcodeproj */;
 				},
@@ -552,6 +596,20 @@
 			fileType = wrapper.cfbundle;
 			path = FeatureTopArtistsTests.xctest;
 			remoteRef = AA1877401EE72F0D00FB5735 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA1877861EE7309E00FB5735 /* FeatureAlbums.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FeatureAlbums.framework;
+			remoteRef = AA1877851EE7309E00FB5735 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA1877881EE7309E00FB5735 /* FeatureAlbumsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FeatureAlbumsTests.xctest;
+			remoteRef = AA1877871EE7309E00FB5735 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AA677E011E7D760D00F7C680 /* MusServices.framework */ = {
@@ -674,6 +732,7 @@
 				AA72107C1E7D3E0E005C5E62 /* AppDelegate.swift in Sources */,
 				AA677E4B1E7D935300F7C680 /* SongsViewController.swift in Sources */,
 				AAF335AC1E893E9400F16942 /* TopArtistsRoute.swift in Sources */,
+				AA1877A21EE738A100FB5735 /* AlbumsFeature.swift in Sources */,
 				AA7167F81E84396A009C9F93 /* SongsRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,6 +757,11 @@
 			isa = PBXTargetDependency;
 			name = FeatureTopArtists;
 			targetProxy = AA18775A1EE72FE800FB5735 /* PBXContainerItemProxy */;
+		};
+		AA18778C1EE730E700FB5735 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FeatureAlbums;
+			targetProxy = AA18778B1EE730E700FB5735 /* PBXContainerItemProxy */;
 		};
 		AA677E051E7D761D00F7C680 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

@@ -91,11 +91,11 @@
 			children = (
 				AA1877421EE72F5600FB5735 /* Cells */,
 				AA1877441EE72F5600FB5735 /* Presentations */,
-				AA1877471EE72F5600FB5735 /* TopArtistsInteractor.swift */,
+				AA18774B1EE72F5600FB5735 /* TopArtistsTypes.swift */,
 				AA1877481EE72F5600FB5735 /* TopArtistsModuleBuilder.swift */,
 				AA1877491EE72F5600FB5735 /* TopArtistsNavigator.swift */,
+				AA1877471EE72F5600FB5735 /* TopArtistsInteractor.swift */,
 				AA18774A1EE72F5600FB5735 /* TopArtistsPresenter.swift */,
-				AA18774B1EE72F5600FB5735 /* TopArtistsTypes.swift */,
 				AA18774C1EE72F5600FB5735 /* TopArtistsViewController.swift */,
 				AA1877221EE72F0C00FB5735 /* FeatureTopArtists.h */,
 				AA1877231EE72F0C00FB5735 /* Info.plist */,

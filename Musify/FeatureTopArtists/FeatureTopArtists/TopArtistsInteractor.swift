@@ -52,6 +52,7 @@ final class TopArtistsInteractor: TopArtistsInteractorType {
 
 extension TopArtistsInteractor: TopArtistsInteractorInputs {
     func request() {
+        dispose = DisposeBag()
         service.topArtists()
             .mapResult()
             .subscribe(onNext: { [weak self] (result) in

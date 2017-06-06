@@ -1,6 +1,6 @@
 //
-//  TopArtistsViewController.swift
-//  ModuleTopArtists
+//  AlbumsViewController.swift
+//  FeatureAlbums
 //
 //  Created by Joachim Kret on 06/06/2017.
 //  Copyright © 2017 Joachim Kret. All rights reserved.
@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-final class TopArtistsViewController: UIViewController {
+final class AlbumsViewController: UIViewController {
     fileprivate let tableView: UITableView
-    fileprivate var artists: Array<TopArtistPresentable> = []
+    fileprivate var albums: Array<AlbumPresentable> = []
     fileprivate var appearsFirstTime = true
 
-    var presenter: TopArtistsPresenterInputs!
+    var presenter: AlbumsPresenterInputs!
 
     init() {
         self.tableView = UITableView(frame: CGRect.zero, style: .grouped)
@@ -61,7 +61,7 @@ final class TopArtistsViewController: UIViewController {
     }
 
     private func configureTableView() {
-        tableView.register(cellType: TopArtistTableViewCell.self)
+        tableView.register(cellType: AlbumTableViewCell.self)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -73,32 +73,32 @@ final class TopArtistsViewController: UIViewController {
     }
 }
 
-extension TopArtistsViewController: UITableViewDelegate {
+extension AlbumsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let artist = artists[indexPath.item].asArtist()
-        presenter.present(artist: artist)
+        let album = albums[indexPath.item].asAlbum()
+        presenter.present(album: album)
     }
 }
 
-extension TopArtistsViewController: UITableViewDataSource {
+extension AlbumsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: TopArtistTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.setup(using: artists[indexPath.item])
+        let cell: AlbumTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.setup(using: albums[indexPath.item])
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return artists.count
+        return albums.count
     }
 }
 
-extension TopArtistsViewController: TopArtistsPresenterOutputs {
-    func present(_ items: Array<TopArtistPresentationItem>) {
-        artists = items
+extension AlbumsViewController: AlbumsPresenterOutputs {
+    func present(_ items: Array<AlbumPresentable>) {
+        albums = items
         tableView.reloadData()
     }
 }

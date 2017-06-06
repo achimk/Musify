@@ -26,7 +26,7 @@ struct AlbumsRoute: Routable {
         guard let name = location.arguments["artist"] else { return }
 
         let artist = Artist(name: name)
-        let flow = AlbumsFlow(
+        let flow = AlbumsFeature(
             serviceNavigation: serviceNavigation,
             serviceAlbums: serviceAlbums,
             artist: artist
