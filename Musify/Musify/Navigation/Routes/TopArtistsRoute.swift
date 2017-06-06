@@ -24,7 +24,7 @@ struct TopArtistsRoute: Routable {
     func navigate(to location: LocationType, using presenter: ViewControllerPresentable) {
         guard location.path == Navigation.Path.topArtists.rawValue else { return }
 
-        let flow = TopArtistsFlow(
+        let flow = TopArtistsFeature(
             serviceNavigation: serviceNavigation,
             serviceArtists: serviceArtists
         )

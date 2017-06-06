@@ -13,6 +13,9 @@
 		AA1239B81EB74284001A7915 /* PlaylistPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1239B71EB74284001A7915 /* PlaylistPresentationItem.swift */; };
 		AA1239BA1EB7429A001A7915 /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1239B91EB7429A001A7915 /* PlaylistTableViewCell.swift */; };
 		AA1239BC1EB74858001A7915 /* PlaylistsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1239BB1EB74858001A7915 /* PlaylistsRoute.swift */; };
+		AA1876E71EE72E1700FB5735 /* TopArtistsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1876E61EE72E1700FB5735 /* TopArtistsFeature.swift */; };
+		AA1877581EE72FE800FB5735 /* FeatureTopArtists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA18773F1EE72F0D00FB5735 /* FeatureTopArtists.framework */; };
+		AA1877591EE72FE800FB5735 /* FeatureTopArtists.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA18773F1EE72F0D00FB5735 /* FeatureTopArtists.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AA4E286F1E8C13B200A2F9C0 /* NavigationServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E286E1E8C13B200A2F9C0 /* NavigationServiceFactory.swift */; };
 		AA4E28721E8C25AC00A2F9C0 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E28711E8C25AC00A2F9C0 /* Navigation.swift */; };
 		AA4E28741E8C2A8F00A2F9C0 /* NavigationServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E28731E8C2A8F00A2F9C0 /* NavigationServiceType.swift */; };
@@ -50,6 +53,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AA18773E1EE72F0D00FB5735 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA1877391EE72F0C00FB5735 /* FeatureTopArtists.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA18771F1EE72F0C00FB5735;
+			remoteInfo = FeatureTopArtists;
+		};
+		AA1877401EE72F0D00FB5735 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA1877391EE72F0C00FB5735 /* FeatureTopArtists.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA1877281EE72F0C00FB5735;
+			remoteInfo = FeatureTopArtistsTests;
+		};
+		AA1877561EE72FD300FB5735 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA1877391EE72F0C00FB5735 /* FeatureTopArtists.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AA18771E1EE72F0C00FB5735;
+			remoteInfo = FeatureTopArtists;
+		};
+		AA18775A1EE72FE800FB5735 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA1877391EE72F0C00FB5735 /* FeatureTopArtists.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AA18771E1EE72F0C00FB5735;
+			remoteInfo = FeatureTopArtists;
+		};
 		AA677E001E7D760D00F7C680 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AA677DFB1E7D760D00F7C680 /* MusServices.xcodeproj */;
@@ -150,6 +181,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				AA1877591EE72FE800FB5735 /* FeatureTopArtists.framework in Embed Frameworks */,
 				AAC82BF71E996A0800ADD6DD /* MusServices.framework in Embed Frameworks */,
 				AAC82BEE1E9969F300ADD6DD /* MusUI.framework in Embed Frameworks */,
 				AAC82BF31E996A0100ADD6DD /* MusToolkit.framework in Embed Frameworks */,
@@ -166,6 +198,8 @@
 		AA1239B71EB74284001A7915 /* PlaylistPresentationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistPresentationItem.swift; sourceTree = "<group>"; };
 		AA1239B91EB7429A001A7915 /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		AA1239BB1EB74858001A7915 /* PlaylistsRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsRoute.swift; sourceTree = "<group>"; };
+		AA1876E61EE72E1700FB5735 /* TopArtistsFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopArtistsFeature.swift; sourceTree = "<group>"; };
+		AA1877391EE72F0C00FB5735 /* FeatureTopArtists.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FeatureTopArtists.xcodeproj; path = FeatureTopArtists/FeatureTopArtists.xcodeproj; sourceTree = "<group>"; };
 		AA4E286E1E8C13B200A2F9C0 /* NavigationServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationServiceFactory.swift; sourceTree = "<group>"; };
 		AA4E28711E8C25AC00A2F9C0 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		AA4E28731E8C2A8F00A2F9C0 /* NavigationServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationServiceType.swift; sourceTree = "<group>"; };
@@ -208,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1877581EE72FE800FB5735 /* FeatureTopArtists.framework in Frameworks */,
 				AAAFE84D1E82B7CB00FF6A81 /* MusUI.framework in Frameworks */,
 				AA677E271E7D79DB00F7C680 /* MusToolkit.framework in Frameworks */,
 				AA677E061E7D763B00F7C680 /* MusServices.framework in Frameworks */,
@@ -234,6 +269,15 @@
 				AA1239B71EB74284001A7915 /* PlaylistPresentationItem.swift */,
 			);
 			path = Playlists;
+			sourceTree = "<group>";
+		};
+		AA18773A1EE72F0C00FB5735 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA18773F1EE72F0D00FB5735 /* FeatureTopArtists.framework */,
+				AA1877411EE72F0D00FB5735 /* FeatureTopArtistsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AA4E28701E8C23AA00A2F9C0 /* Routes */ = {
@@ -316,6 +360,7 @@
 		AA72106F1E7D3E0D005C5E62 = {
 			isa = PBXGroup;
 			children = (
+				AA1877391EE72F0C00FB5735 /* FeatureTopArtists.xcodeproj */,
 				AAAFE8401E82B7B100FF6A81 /* MusUI.xcodeproj */,
 				AA677DFB1E7D760D00F7C680 /* MusServices.xcodeproj */,
 				AA677E1E1E7D79CA00F7C680 /* MusToolkit.xcodeproj */,
@@ -337,6 +382,7 @@
 		AA72107A1E7D3E0E005C5E62 /* Musify */ = {
 			isa = PBXGroup;
 			children = (
+				AAA37B151EE6EA2E00DB9C09 /* Features */,
 				AAF335A51E89303000F16942 /* Services */,
 				AA7167ED1E843687009C9F93 /* Navigation */,
 				AA1239AB1EB7421F001A7915 /* Playlists */,
@@ -359,6 +405,14 @@
 				AA7210921E7D3E0E005C5E62 /* Info.plist */,
 			);
 			path = MusifyTests;
+			sourceTree = "<group>";
+		};
+		AAA37B151EE6EA2E00DB9C09 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				AA1876E61EE72E1700FB5735 /* TopArtistsFeature.swift */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 		AAAFE8411E82B7B100FF6A81 /* Products */ = {
@@ -394,12 +448,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				AA1877571EE72FD300FB5735 /* PBXTargetDependency */,
 				AAAFE84C1E82B7C300FF6A81 /* PBXTargetDependency */,
 				AA677E291E7D79E400F7C680 /* PBXTargetDependency */,
 				AA677E051E7D761D00F7C680 /* PBXTargetDependency */,
 				AAC82BF01E9969F300ADD6DD /* PBXTargetDependency */,
 				AAC82BF51E996A0100ADD6DD /* PBXTargetDependency */,
 				AAC82BF91E996A0800ADD6DD /* PBXTargetDependency */,
+				AA18775B1EE72FE800FB5735 /* PBXTargetDependency */,
 			);
 			name = Musify;
 			productName = Musify;
@@ -459,6 +515,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = AA18773A1EE72F0C00FB5735 /* Products */;
+					ProjectRef = AA1877391EE72F0C00FB5735 /* FeatureTopArtists.xcodeproj */;
+				},
+				{
 					ProductGroup = AA677DFC1E7D760D00F7C680 /* Products */;
 					ProjectRef = AA677DFB1E7D760D00F7C680 /* MusServices.xcodeproj */;
 				},
@@ -480,6 +540,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		AA18773F1EE72F0D00FB5735 /* FeatureTopArtists.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FeatureTopArtists.framework;
+			remoteRef = AA18773E1EE72F0D00FB5735 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA1877411EE72F0D00FB5735 /* FeatureTopArtistsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FeatureTopArtistsTests.xctest;
+			remoteRef = AA1877401EE72F0D00FB5735 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AA677E011E7D760D00F7C680 /* MusServices.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -586,6 +660,7 @@
 				AA677E511E7D937B00F7C680 /* SongPresentationItem.swift in Sources */,
 				AA677DF61E7D707C00F7C680 /* TopArtistsViewModel.swift in Sources */,
 				AA1239BC1EB74858001A7915 /* PlaylistsRoute.swift in Sources */,
+				AA1876E71EE72E1700FB5735 /* TopArtistsFeature.swift in Sources */,
 				AA677E491E7D929100F7C680 /* SongsFlow.swift in Sources */,
 				AA677E4D1E7D935F00F7C680 /* SongsViewModel.swift in Sources */,
 				AA1239B01EB74248001A7915 /* PlaylistsFlow.swift in Sources */,
@@ -614,6 +689,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AA1877571EE72FD300FB5735 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FeatureTopArtists;
+			targetProxy = AA1877561EE72FD300FB5735 /* PBXContainerItemProxy */;
+		};
+		AA18775B1EE72FE800FB5735 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FeatureTopArtists;
+			targetProxy = AA18775A1EE72FE800FB5735 /* PBXContainerItemProxy */;
+		};
 		AA677E051E7D761D00F7C680 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MusServices;
