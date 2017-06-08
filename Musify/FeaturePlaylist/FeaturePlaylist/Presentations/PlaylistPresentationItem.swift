@@ -12,7 +12,7 @@ import MusServices
 struct PlaylistPresentationItem: PlaylistPresentable {
     let playlist: PlaylistType
 
-    init(playlist: PlaylistType) {
+    init(_ playlist: PlaylistType) {
         self.playlist = playlist
     }
 

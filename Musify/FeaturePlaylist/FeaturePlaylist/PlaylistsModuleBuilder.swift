@@ -9,15 +9,14 @@
 import Foundation
 import UIKit
 
-final class PlaylistsModuleBuilder {
+public final class PlaylistsModuleBuilder {
+    private let dependencies: PlaylistsModuleDependencies
 
-    init() {
-        /*
-         Inject additional dependencies here
-         */
+    public init(_ dependencies: PlaylistsModuleDependencies) {
+        self.dependencies = dependencies
     }
 
-    func build() -> UIViewController {
+    public func build() -> UIViewController {
 
         /*
          Navigator
@@ -31,7 +30,7 @@ final class PlaylistsModuleBuilder {
 
         let presenter = PlaylistsPresenter(navigator: navigator, outputs: view)
 
-        let interactor = PlaylistsInteractor(outputs: presenter)
+        let interactor = PlaylistsInteractor(outputs: presenter, service: dependencies)
 
         /*
          Interactor -> Presenter -> View

@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import MusServices
+import Result
+
+public typealias PlaylistsModuleDependencies = PlaylistServiceType
+
+typealias PlaylistsResult = Result<Array<PlaylistType>, AnyError>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MusServices
 
 protocol PlaylistsPresenterAppearance {
     func viewDidLoad()
@@ -20,14 +21,15 @@ protocol PlaylistsPresenterAppearance {
  Inputs declarations here (Presenter)
  */
 protocol PlaylistsPresenterInputs: class, PlaylistsPresenterAppearance {
-
+    func create(_ name: String)
+    func delete(_ playlist: PlaylistType)
 }
 
 /**
  Outputs declarations here (ViewController)
  */
 protocol PlaylistsPresenterOutputs: class {
-
+    func present(_ items: Array<PlaylistPresentable>)
 }
 
 protocol PlaylistsPresenterType {
@@ -74,13 +76,18 @@ extension PlaylistsPresenter: PlaylistsPresenterAppearance {
 }
 
 extension PlaylistsPresenter: PlaylistsPresenterInputs {
-    /*
-     Implement PlaylistsPresenterInputs protocol
-     */
+    func create(_ name: String) {
+        interactor.createAndAdd(name: name)
+    }
+
+    func delete(_ playlist: PlaylistType) {
+        interactor.remove(playlist: playlist)
+    }
 }
 
 extension PlaylistsPresenter: PlaylistsInteractorOutputs {
-    /*
-     Implement PlaylistsInteractorOutputs protocol
-     */
+    func playlists(_ result: PlaylistsResult) {
+        let items = result.recover([]).map { PlaylistPresentationItem($0) }
+        outputs?.present(items)
+    }
 }

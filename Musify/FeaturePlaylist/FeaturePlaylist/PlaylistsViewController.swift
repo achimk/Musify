@@ -54,6 +54,32 @@ final class PlaylistsViewController: UIViewController {
         presenter.viewDidDisappear(animated)
     }
 
+    @IBAction func playlistInput() {
+        let alert = UIAlertController(
+            title: "Playlist",
+            message: "Please input playlist name:",
+            preferredStyle: UIAlertControllerStyle.alert
+        )
+
+        alert.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.default, handler: { [weak self] action in
+            guard let text = alert.textFields?.first?.text else { return }
+//            self?.add(playlistWithName: text)
+        }))
+        alert.addTextField(configurationHandler: {(textField: UITextField) in
+            textField.placeholder = "Name..."
+        })
+
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func configureNavigationItems() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(PlaylistsViewController.playlistInput)
+        )
+    }
+
     private func configureTableView() {
         tableView.register(cellType: PlaylistTableViewCell.self)
 
@@ -68,9 +94,10 @@ final class PlaylistsViewController: UIViewController {
 }
 
 extension PlaylistsViewController: PlaylistsPresenterOutputs {
-    /*
-     Implement PlaylistsPresenterOutputs protocol
-     */
+    func present(_ items: Array<PlaylistPresentable>) {
+        playlists = items
+        tableView.reloadData()
+    }
 }
 
 extension PlaylistsViewController: UITableViewDelegate {
