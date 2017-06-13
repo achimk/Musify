@@ -24,7 +24,7 @@ struct PlaylistsRoute: Routable {
     func navigate(to location: LocationType, using presenter: ViewControllerPresentable) throws {
         guard location.path == Navigation.Path.playlists.rawValue else { return }
 
-        let flow = PlaylistsFlow(servicePlaylists: servicePlaylists)
+        let flow = PlaylistsFeature(servicePlaylists: servicePlaylists)
         flow.present(using: presenter)
     }
 }

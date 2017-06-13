@@ -30,6 +30,8 @@ final class PlaylistsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
+        configureNavigationItems()
         presenter.viewDidLoad()
     }
 
@@ -63,7 +65,7 @@ final class PlaylistsViewController: UIViewController {
 
         alert.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.default, handler: { [weak self] action in
             guard let text = alert.textFields?.first?.text else { return }
-//            self?.add(playlistWithName: text)
+            self?.presenter.create(text)
         }))
         alert.addTextField(configurationHandler: {(textField: UITextField) in
             textField.placeholder = "Name..."
@@ -120,8 +122,8 @@ extension PlaylistsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-//            let playlist = playlists[indexPath.item].asPlaylist()
-//            viewModel.inputs.remove(playlist: playlist)
+            let playlist = playlists[indexPath.item].asPlaylist()
+            presenter.delete(playlist)
         }
     }
 }

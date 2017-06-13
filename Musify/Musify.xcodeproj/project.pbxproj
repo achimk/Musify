@@ -53,6 +53,7 @@
 		AA7210861E7D3E0E005C5E62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7210841E7D3E0E005C5E62 /* LaunchScreen.storyboard */; };
 		AA7210911E7D3E0E005C5E62 /* MusifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7210901E7D3E0E005C5E62 /* MusifyTests.swift */; };
 		AAAFE84D1E82B7CB00FF6A81 /* MusUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAFE8481E82B7B100FF6A81 /* MusUI.framework */; };
+		AAC449B11EF00AB200533BA6 /* PlaylistsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC449B01EF00AB200533BA6 /* PlaylistsFeature.swift */; };
 		AAC82BEE1E9969F300ADD6DD /* MusUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AAAFE8481E82B7B100FF6A81 /* MusUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AAC82BF31E996A0100ADD6DD /* MusToolkit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA677E241E7D79CB00F7C680 /* MusToolkit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AAC82BF71E996A0800ADD6DD /* MusServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA677E011E7D760D00F7C680 /* MusServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -326,6 +327,7 @@
 		AA7210901E7D3E0E005C5E62 /* MusifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusifyTests.swift; sourceTree = "<group>"; };
 		AA7210921E7D3E0E005C5E62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAAFE8401E82B7B100FF6A81 /* MusUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MusUI.xcodeproj; path = ../MusUI/MusUI.xcodeproj; sourceTree = "<group>"; };
+		AAC449B01EF00AB200533BA6 /* PlaylistsFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsFeature.swift; sourceTree = "<group>"; };
 		AAF335A91E89306100F16942 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		AAF335AB1E893E9400F16942 /* TopArtistsRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopArtistsRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -536,6 +538,7 @@
 		AAA37B151EE6EA2E00DB9C09 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				AAC449B01EF00AB200533BA6 /* PlaylistsFeature.swift */,
 				AA1876E61EE72E1700FB5735 /* TopArtistsFeature.swift */,
 				AA1877A11EE738A100FB5735 /* AlbumsFeature.swift */,
 				AA1877EA1EE73FCF00FB5735 /* SongsFeature.swift */,
@@ -857,6 +860,7 @@
 				AA677DF21E7D6FDC00F7C680 /* TopArtistsViewController.swift in Sources */,
 				AA1239B21EB74255001A7915 /* PlaylistsViewController.swift in Sources */,
 				AA4E28741E8C2A8F00A2F9C0 /* NavigationServiceType.swift in Sources */,
+				AAC449B11EF00AB200533BA6 /* PlaylistsFeature.swift in Sources */,
 				AA4E28721E8C25AC00A2F9C0 /* Navigation.swift in Sources */,
 				AA677E4F1E7D937000F7C680 /* SongTableViewCell.swift in Sources */,
 				AA72107C1E7D3E0E005C5E62 /* AppDelegate.swift in Sources */,

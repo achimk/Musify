@@ -28,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let services = Services()
         self.navigator = NavigationServiceFactory.create(by: services)
 
-        let route = Navigation.Route.topArtists
+//        let route = Navigation.Route.topArtists
+        let route = Navigation.Route.playlists
         let location = Navigation.Location.create(route)
         self.navigator?.open(location, presenter: presenter)
 
